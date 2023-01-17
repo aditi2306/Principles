@@ -7,7 +7,7 @@ namespace PrinciplesExamples
     {
         static void Main(string[] args)
         {
-
+            //KISS Principle
             List<Book> books = new List<Book>();
             books.Add(ReturnBookFunc("Agile Principles, and Solid Principles", "Agile Principles, Patterns, and Practices in C#",400,BookType.NonFiction,Guid.NewGuid()));
             books.Add(ReturnBookFunc("Brazilian author Paulo Coelho", "The Alchemist", 500, BookType.Fiction, Guid.NewGuid()));
@@ -23,7 +23,18 @@ namespace PrinciplesExamples
                 Console.WriteLine(book.Name+" "+book.Description+" "+book.Price+" "+book.Type);
             }
 
-            principleKiss.SelectedBookDetails("The Alchemist");
+            var result=principleKiss.SelectedBookDetails("The Alchemist");
+            Console.WriteLine("Selected book "+result.Name + " " + result.Description + " " + result.Price + " " + result.Type);
+
+            //DependencyInjection
+            EmailNotificaton notificaton = new EmailNotificaton();
+            Customer customer = new Customer(notificaton);
+            customer.Job();
+
+            Notifier notificaton = new EmailNotificaton();
+            Customer customer = new Customer(notificaton);
+            customer.Job();
+
 
             Book ReturnBookFunc(string description, string name, int price, BookType type, Guid Id)
             {
