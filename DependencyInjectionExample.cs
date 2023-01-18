@@ -11,15 +11,16 @@ namespace PrinciplesExamples
         private Notifier notify;
         public Customer(Notifier notification)
         {
+            //decoupled and communicate through the Notifier abstraction
             this.notify = notification;
         }
 
-        public void Job()
+        public void Delivered()
         {
             notify.Alert();
         }
     }
-
+    // dependency injection pattern to facilitate adding the Notifier dependency
     public interface Notifier
     {
         void Alert();
@@ -29,7 +30,7 @@ namespace PrinciplesExamples
     {
         public void Alert()
         {
-            Console.WriteLine("Alert for Job fail");
+            Console.WriteLine("Package Delivered");
         }
     }
 }

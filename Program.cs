@@ -27,13 +27,13 @@ namespace PrinciplesExamples
             Console.WriteLine("Selected book "+result.Name + " " + result.Description + " " + result.Price + " " + result.Type);
 
             //DependencyInjection
-            EmailNotificaton notificaton = new EmailNotificaton();
-            Customer customer = new Customer(notificaton);
-            customer.Job();
+            //EmailNotificaton notificaton = new EmailNotificaton();
+            //Customer customer = new Customer(notificaton);
+            //customer.Delivered();
 
             Notifier notificaton = new EmailNotificaton();
             Customer customer = new Customer(notificaton);
-            customer.Job();
+            customer.Delivered();
 
 
             Book ReturnBookFunc(string description, string name, int price, BookType type, Guid Id)
