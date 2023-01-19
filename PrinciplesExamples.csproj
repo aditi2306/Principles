@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyInjectionExample.cs" />
-    <Compile Include="DependencyInjectionViolation.cs" />
-    <Compile Include="KISS.cs" />
+    <Compile Include="DependencyInversionExample.cs" />
+    <Compile Include="DependencyInversionViolation.cs" />
+    <Compile Include="KISSExample.cs" />
+    <Compile Include="KISSProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
